@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-parent-container',
@@ -6,13 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent-container.component.scss']
 })
 export class ParentContainerComponent implements OnInit {
-  titleFromParent = 'titleFromParent';
-  inputFromParent(event, value){
-    if(event.keyCode == 13) {
-    this.titleFromParent = value;}
-    else this.titleFromParent = 'Press Enter';
+  titleFromParent = 'Default Title From Parent';
+  outputFromChild ='Default';
+  inputFromParent(event, value) {
+    // console.log('EVENT: ',event);
+    if (event.keyCode == 13) {
+      this.titleFromParent = value;
+    }
+    else this.titleFromParent;
   }
-  constructor() { }
+
+  handleChangesChildOutput(event){
+  this.outputFromChild = event;
+  }
+  constructor() {
+  }
 
   ngOnInit() {
   }

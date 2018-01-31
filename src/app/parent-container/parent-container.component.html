@@ -2,5 +2,6 @@
   Parent-container works!
   <input type="text" #text (keydown)="inputFromParent($event, text.value)">
 </p>
+<h2>{{outputFromChild}}</h2>
 <hr/>
-<app-child-container [title]="titleFromParent"></app-child-container>
+<app-child-container [titleFromChild]="titleFromParent" (outputFromChild)="handleChangesChildOutput($event)"></app-child-container>

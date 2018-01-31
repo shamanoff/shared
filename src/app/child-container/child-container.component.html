@@ -1,5 +1,7 @@
 <p>
-  child-container works!
+  Child-container works!
+  <input type="text" #text (keydown)="inputFromChild($event, text.value)">
+
 </p>
-<h2>{{title}}</h2>
+<h2>{{titleFromChild}}</h2>
 

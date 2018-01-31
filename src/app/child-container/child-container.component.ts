@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-child-container',
@@ -7,8 +7,15 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ChildContainerComponent implements OnInit {
 
-  @Input() title = 'default';
+  @Input() titleFromChild = 'default';
+  @Output() outputFromChild = new EventEmitter();
 
+  inputFromChild(event, value){
+    if (event.keyCode == 13) {
+      this.outputFromChild.emit(value);
+    }
+    else this.outputFromChild;
+  }
 
   constructor() { }
 
