@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ParentBlogListComponent } from './blog-list/parent-blog-list.component';
 import { ParentContainerComponent } from './parent-container/parent-container.component';
 import { ChildContainerComponent } from './child-container/child-container.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ChildContainerComponent } from './child-container/child-container.compo
     ChildContainerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

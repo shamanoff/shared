@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-child-container',
   templateUrl: './child-container.component.html',
   styleUrls: ['./child-container.component.scss']
 })
-export class ChildContainerComponent implements OnInit {
+export class ChildContainerComponent  {
 
   @Input() titleFromChild = 'default';
   @Output() outputFromChild = new EventEmitter();
@@ -14,12 +14,6 @@ export class ChildContainerComponent implements OnInit {
     if (event.keyCode == 13) {
       this.outputFromChild.emit(value);
     }
-    else this.outputFromChild;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }

@@ -2,6 +2,24 @@
   Parent-container works!
   <input type="text" #text (keydown)="inputFromParent($event, text.value)">
 </p>
-<h2>{{outputFromChild}}</h2>
+<h2>{{outputHandledFromChild}}</h2>
 <hr/>
-<app-child-container [titleFromChild]="titleFromParent" (outputFromChild)="handleChangesChildOutput($event)"></app-child-container>
+<app-child-container [titleFromChild]="titleFromParent"
+    (outputFromChild)="handleChangesChildOutput($event)">
+
+</app-child-container>
+<hr/>
+
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+
+
