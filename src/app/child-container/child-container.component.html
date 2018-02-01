@@ -1,10 +1,9 @@
 <div class="card text-center">
   <div class="card-body">
-    <label>
-      Child-container works!
-      <input class="form-control" type="text" #text (keydown)="inputFromChild($event, text.value)">
+    <label class="display-4">Child-container works!</label>
 
-    </label>
+    <input class="form-control" type="text" #text (keydown)="inputFromChild($event, text.value)">
+
     <h2>{{titleFromChild}}</h2>
   </div>
 </div>
